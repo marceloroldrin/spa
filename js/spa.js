@@ -1,14 +1,16 @@
 const SPA = (id, route) => {
 
-    const a_elements = document.querySelectorAll('a:not([target="_blank"])')
+    const a_elements = document.querySelectorAll('[data-router]')
     const content = document.querySelector(`#${id}`)
     const baseUrl = '/spa'
 
-    a_elements.forEach(a => a.addEventListener('click', clickLink));
+    a_elements.forEach(element => element.addEventListener('click', clickLink));
 
     function clickLink(ev) {
         ev.preventDefault()
-        const href = ev.target.getAttribute('href')
+        const href = ev.target.getAttribute('data-router')
+        console.log(href);
+
         if (href == getCurrentPath()) return;
         const rota = getRota(href)
         if (rota) {
