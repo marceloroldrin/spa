@@ -1,7 +1,7 @@
 import rotas from './rotas.js';
 import spa from './spa.js'
 
-$(document).ready(() => {
+(() => {
     spa('content', rotas)
 
     $('.nav-link').click(function() {
@@ -11,4 +11,4 @@ $(document).ready(() => {
             $('.navbar-collapse').removeClass('show')
         }
     })
-})
+})()
