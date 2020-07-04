@@ -9,8 +9,7 @@ const SPA = (id, route) => {
     function clickLink(ev) {
         ev.preventDefault()
         const href = ev.target.getAttribute('data-router')
-        console.log(href);
-
+        
         if (href == getCurrentPath()) return;
         const rota = getRota(href)
         if (rota) {
